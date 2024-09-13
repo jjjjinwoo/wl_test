@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
+@import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css);
+/* 공통 */
+body {
+  font-family: "Pretendard", sans-serif;
+  background-color: white;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: -0.01em;
+}
+
+/* 헤더 */
+header {
+  position: relative;
+  z-index: 100;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  height: 84px;
+  width: 100%;
+}
+header .header_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  max-width: 1800px;
+  padding-top: 26px;
+}
+header .header_wrap .list {
+  display: flex;
+  font-size: 18px;
+  -moz-column-gap: 68px;
+       column-gap: 68px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+header .header_wrap .icon_box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+header .header_wrap .icon_box #search_bar {
+  padding: 4px 22px;
+  padding-right: 10px;
+  background-color: #eeeeee;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  position: absolute;
+  left: -322px;
+  box-sizing: border-box;
+}
+header .header_wrap .icon_box #search_bar input {
+  background-color: transparent;
+  border: none;
+}
+header .header_wrap .icon_box #search_bar #search_text {
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+}
+header .header_wrap .icon_box #search_bar #search_btn {
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  background-image: url(../img/main/icon/search.png);
+}
+
+footer {
+  min-height: 80px;
+  background-color: #424242;
+  display: flex;
+  align-items: center;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: white;
+}
+footer .container .copyright {
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+footer .container .sns_box {
+  display: flex;
+  -moz-column-gap: 14px;
+       column-gap: 14px;
+}/*# sourceMappingURL=common.css.map */

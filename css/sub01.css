@@ -1,0 +1,208 @@
+.floating_btn {
+  position: fixed;
+  z-index: 100;
+  width: 78px;
+  height: 78px;
+  background-color: #ea0000;
+  right: 30px;
+  bottom: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.15));
+}
+.floating_btn .text {
+  color: white;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.main_sec {
+  height: 600px;
+  background-color: gray;
+}
+.main_sec .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_sec .container .text_box {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main_sec .container .text_box .tag {
+  font-size: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid white;
+  border-radius: 28px;
+  padding: 8px 28px;
+  font-weight: 600;
+  margin-bottom: 38px;
+}
+.main_sec .container .text_box .title {
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+  letter-spacing: -0.4px;
+}
+.main_sec .container .text_box .text {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+}
+.main_sec .container .bg_box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: brightness(0.8);
+  display: flex;
+  justify-content: center;
+}
+.main_sec .container .bg_box .web_img {
+  position: absolute;
+  top: -280px;
+  width: 100%;
+  min-width: 1920px;
+}
+.main_sec .container .control_box {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  display: flex;
+  gap: 12px;
+}
+.main_sec .container .control_box .number {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 16px;
+  border-radius: 100px;
+}
+.main_sec .container .control_box .number .now {
+  font-weight: 700;
+}
+.main_sec .container .control_box .number span:not(.now) {
+  opacity: 0.8;
+}
+.main_sec .container .control_box .number .line {
+  width: 1px;
+  height: 8px;
+  background-color: white;
+}
+.main_sec .container .control_box .go_stop {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 100%;
+}
+.main_sec .container .arrow_box {
+  position: absolute;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sec1 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+}
+.sec1 .container .main_title {
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  margin-bottom: 40px;
+}
+.sec1 .container .tab_list {
+  display: flex;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  margin-bottom: 60px;
+}
+.sec1 .container .tab_list button {
+  border: 1px solid black;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 22px;
+  border-radius: 30px;
+}
+.sec1 .container .tab_list button.on {
+  background-color: black;
+  color: white;
+}
+.sec1 .container .card_list {
+  display: flex;
+  -moz-column-gap: 36px;
+       column-gap: 36px;
+}
+.sec1 .container .card_list .card {
+  display: flex;
+  flex-direction: column;
+  width: 273px;
+}
+.sec1 .container .card_list .card .img_box {
+  width: 273px;
+  height: 273px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.sec1 .container .card_list .card .title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 22px;
+  margin-bottom: 14px;
+}
+.sec1 .container .card_list .card .text {
+  font-size: 16px;
+  line-height: 22px;
+  color: #999999;
+}
+.sec1 .container .card_list .card.first img {
+  position: relative;
+  top: -30px;
+  left: -34px;
+}
+.sec1 .container .card_list .card.second img {
+  position: relative;
+  top: -70px;
+  left: -98px;
+}
+.sec1 .container .card_list .card.third img {
+  position: relative;
+  top: -148px;
+  left: -32px;
+}
+.sec1 .container .card_list .card.fourth img {
+  position: relative;
+  top: -32px;
+  left: -96px;
+}
+.sec1 .container .more_btn {
+  background-color: black;
+  padding: 14px 42px;
+  border-radius: 34px;
+  font-size: 18px;
+  font-weight: 500;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}/*# sourceMappingURL=sub01.css.map */
