@@ -70,15 +70,23 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      overflow: hidden;
       filter: brightness(0.8);
-      display: flex;
-      justify-content: center;
-      .web_img {
-        position: absolute;
-        top: -280px;
-        width: 100%;
-        min-width: 1920px;
+      .bg_img {
+        width: 100vw;
+        height: 600px;
+        background-image: url(../img/sub/sub01/main_bg/1.png);
+        background-position-y: -296px;
+        background-position-x: center;
+        background-size: inherit;
+        background-repeat: no-repeat;
+      }
+      .bg_img.first {
+        background-image: url(../img/sub/sub01/main_bg/1.png);
+        background-position-y: -280px;
+      }
+      .bg_img.second {
+        background-image: url(../img/sub/sub01/main_bg/2.png);
+        background-position-y: -486px;
       }
     }
     .control_box {
@@ -217,6 +225,14 @@
       display: flex;
       align-items: center;
       margin-top: 60px;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .main_sec {
+    .bg_img {
+      background-size: cover !important;
     }
   }
 }

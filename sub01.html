@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>코딩테스트 박진우</title>
+    <!-- css -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/sub01.css" />
+    <!-- jquery -->
+    <script src="./js/jquery.min.js"></script>
+    <!-- slick -->
+    <script src="./js/slick.js"></script>
+    <link rel="stylesheet" href="./css/slick.css" />
+    <link rel="stylesheet" href="./css/slick-theme.css" />
   </head>
   <body>
     <div class="container">
@@ -58,11 +65,10 @@
               </p>
             </div>
             <div class="bg_box">
-              <img
-                class="web_img"
-                src="./img/sub/sub01/main_bg.png"
-                alt="main_bg"
-              />
+              <div class="bg_img first"></div>
+              <div class="bg_img second"></div>
+              <div class="bg_img third"></div>
+              <div class="bg_img fourth"></div>
             </div>
             <div class="control_box">
               <div class="number">
@@ -172,5 +178,13 @@
         </div>
       </footer>
     </div>
+    <script>
+      "use strict";
+
+      // 슬릭슬라이더
+      $(function () {
+        $(".main_sec .bg_box").slick();
+      });
+    </script>
   </body>
 </html>
