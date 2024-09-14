@@ -19,10 +19,10 @@
       <header>
         <div class="header_wrap">
           <h1 class="logo">
-            <img src="./img/main/logo.png" alt="logo" />
+            <a href="#"> <img src="./img/main/logo.png" alt="logo" /></a>
           </h1>
           <ul class="list">
-            <li><a href="#">회사소개</a></li>
+            <li><a class="on" href="#">회사소개</a></li>
             <li><a href="#">주요사업</a></li>
             <li><a href="#">매거진</a></li>
             <li><a href="#">공지사항</a></li>
@@ -35,6 +35,7 @@
                 id="search_text"
                 name="search_text"
                 placeholder="키워드를 입력하세요."
+                autocomplete="off"
               />
               <input
                 type="submit"
@@ -42,27 +43,75 @@
                 name="search_btn"
                 value="작성완료"
               />
+              <div class="popup">
+                <h3>추천 검색어</h3>
+                <ul class="list">
+                  <li><a href="#">#디자인</a></li>
+                  <li><a href="#">#기획</a></li>
+                  <li><a href="#">#퍼블리셔</a></li>
+                  <li><a href="#">#코딩테스트</a></li>
+                  <li><a href="#">#백엔드개발자</a></li>
+                </ul>
+              </div>
             </form>
-            <a href="#">
+            <a class="menu" href="#">
               <img src="./img/main/icon/gnb_menu.png" alt="gnb_menu" />
+              <div class="bg"></div>
             </a>
           </div>
         </div>
       </header>
       <main>
-        <button class="floating_btn">
+        <button id="floating_btn">
           <img class="icon" src="./img/sub/sub01/icon/popup.png" alt="popup" />
           <span class="text">POPUP</span>
         </button>
+        <div class="popup">
+          <div class="text_box">
+            <p class="text">팝업 타이틀이 들어갑니다.</p>
+            <button class="close_btn">닫기</button>
+          </div>
+          <div class="bg"></div>
+        </div>
         <section class="main_sec">
           <div class="container">
             <div class="text_box">
-              <span class="tag">About</span>
-              <h2 class="title">심플하지만 완성도 있는 디자인</h2>
-              <p class="text">
-                심플함 속에서도 뛰어난 완성도를 갖춘 디자인의 매력을 선사하며<br />
-                세련된 감각과 깊이 있는 디테일이 돋보입니다.
-              </p>
+              <div class="card first">
+                <span class="tag">About</span>
+                <h2 class="title">심플하지만 완성도 있는 디자인</h2>
+                <p class="text">
+                  심플함 속에서도 뛰어난 완성도를 갖춘 디자인의 매력을 선사하며
+                  세련된 감각과 깊이 있는 디테일이 돋보입니다.
+                </p>
+              </div>
+              <div class="card second">
+                <span class="tag">About</span>
+                <h2 class="title">고객 중심의 맞춤형 솔루션</h2>
+                <p class="text">
+                  고객의 비전과 목표를 깊이 이해하고, 그에 맞춘 맞춤형 디자인
+                  솔루션을 제공하여 함께 성장하고 발전하는 파트너십을
+                  구축합니다.
+                </p>
+              </div>
+              <div class="card third">
+                <span class="tag">About</span>
+                <h2 class="title">창의성과 혁신의 추구</h2>
+                <p class="text">
+                  끊임없이 변화하는 시장과 고객의 요구에 맞추어 새로운
+                  아이디어와 접근 방식을 개발하며, 디자인을 통해 세상에 긍정적인
+                  변화를 가져옵니다.
+                </p>
+              </div>
+              <div class="card fourth">
+                <span class="tag">About</span>
+                <h2 class="title">팀워크와 상호 존중의 문화</h2>
+                <p class="text">
+                  팀원 간의 상호 존중과 협력을 바탕으로, 열린 소통과 창의적인
+                  아이디어 공유를 장려합니다. 다양한 배경과 전문성을 가진
+                  인재들이 함께 일하며, 서로의 성장을 지원하는 조직 문화를
+                  만듭니다.
+                </p>
+              </div>
             </div>
             <div class="bg_box">
               <div class="bg_img first"></div>
@@ -74,13 +123,18 @@
               <div class="number">
                 <span class="now">1</span>
                 <div class="line"></div>
-                <span>4</span>
+                <span class="total">4</span>
               </div>
-              <button class="go_stop">
+              <button class="go_stop stop">
                 <img
-                  class="stop"
+                  class="stop_icon"
                   src="./img/sub/sub01/icon/stop.png"
-                  alt="stop"
+                  alt="stop_icon"
+                />
+                <img
+                  class="go_icon"
+                  src="./img/sub/sub01/icon/go.png"
+                  alt="go_icon"
                 />
               </button>
             </div>
@@ -110,7 +164,7 @@
               <button>#DEVELOPMENT</button>
             </div>
             <div class="card_list">
-              <a href="#" class="card first">
+              <a href="#" class="card active first des">
                 <div class="img_box">
                   <img src="./img/sub/sub01/card_img/1.png" alt="image1" />
                 </div>
@@ -120,18 +174,18 @@
                   선보입니다.
                 </p>
               </a>
-              <a href="#" class="card second">
+              <a href="#" class="card active second ui">
                 <div class="img_box">
-                  <img src="./img/sub/sub01/card_img/2.png" alt="image1" />
+                  <img src="./img/sub/sub01/card_img/2.png" alt="image2" />
                 </div>
                 <h3 class="title">단순함으로 완성된 세련됨</h3>
                 <p class="text">
                   세련된 기하학적 도형은 아름다운 선율과 기개를 느끼게 합니다.
                 </p>
               </a>
-              <a href="#" class="card third">
+              <a href="#" class="card active third des">
                 <div class="img_box">
-                  <img src="./img/sub/sub01/card_img/3.png" alt="image1" />
+                  <img src="./img/sub/sub01/card_img/3.png" alt="image3" />
                 </div>
                 <h3 class="title">우아한 감각</h3>
                 <p class="text">
@@ -139,9 +193,9 @@
                   합니다.
                 </p>
               </a>
-              <a href="#" class="card fourth">
+              <a href="#" class="card active fourth dev">
                 <div class="img_box">
-                  <img src="./img/sub/sub01/card_img/4.png" alt="image1" />
+                  <img src="./img/sub/sub01/card_img/4.png" alt="image4" />
                 </div>
                 <h3 class="title">선 안에 숨겨진 고급스러움</h3>
                 <p class="text">
@@ -158,11 +212,9 @@
       </main>
       <footer>
         <div class="container">
-          <img
-            class="logo"
-            src="./img/main/footer_logo.png"
-            alt="footer_logo"
-          />
+          <a class="logo" href="#">
+            <img src="./img/main/footer_logo.png" alt="footer_logo"
+          /></a>
           <p class="copyright">Copyright © All Rights Reserved.</p>
           <div class="sns_box">
             <a href="#"
@@ -181,9 +233,177 @@
     <script>
       "use strict";
 
-      // 슬릭슬라이더
+      // 검색팝업 - js
+
+      const searchText = document.querySelector("#search_text");
+      const searchPopup = document.querySelector("#search_bar .popup");
+
+      searchText.addEventListener("focus", function () {
+        searchPopup.classList.add("on");
+      });
+
+      searchText.addEventListener("blur", function () {
+        searchPopup.classList.remove("on");
+      });
+
+      // 팝업 플로팅 버튼 - js
+
+      const popupBtn = document.querySelector("#floating_btn");
+      const popupScreen = document.querySelector("main > .popup");
+
+      popupBtn.addEventListener("click", function () {
+        popupScreen.classList.add("on");
+      });
+
+      document
+        .querySelector("main > .popup .close_btn")
+        .addEventListener("click", function () {
+          popupScreen.classList.remove("on");
+        });
+
+      // 팝업 플로팅 버튼 스크롤 맨 아래 인식 - jquery
+
       $(function () {
-        $(".main_sec .bg_box").slick();
+        document.addEventListener("scroll", detectBottom);
+
+        function detectBottom() {
+          var scrollTop = $(window).scrollTop();
+          var innerHeight = $(window).innerHeight();
+          var scrollHeight = $("body").prop("scrollHeight");
+          if (scrollTop + innerHeight >= scrollHeight) {
+            popupBtn.classList.add("bottom");
+          } else {
+            popupBtn.classList.remove("bottom");
+          }
+        }
+      });
+
+      // 슬릭슬라이더 - jquery, js
+
+      const mainSlider = $(".main_sec .bg_box");
+      const mainSliderText = $(".main_sec .text_box");
+
+      $(function () {
+        mainSlider.slick({
+          autoplay: true,
+          arrows: false,
+          asNavFor: mainSliderText,
+          speed: 3000,
+          pauseOnFocus: false,
+          pauseOnHover: false,
+        });
+
+        mainSlider.on(
+          "init reInit afterChange",
+          function (event, slick, currentSlide, nextSlide) {
+            var i = (currentSlide ? currentSlide : 0) + 1;
+
+            $(".main_sec .control_box .number").html(
+              "<span class='now'>" +
+                i +
+                "</span><div class=line></div><span class=total> " +
+                slick.slideCount +
+                "</span>"
+            );
+          }
+        );
+
+        mainSliderText.slick({
+          fade: true,
+          arrows: false,
+          asNavFor: mainSlider,
+          speed: 3000,
+        });
+
+        const GoStopBtn = document.querySelector(".main_sec .go_stop");
+
+        GoStopBtn.addEventListener("click", function () {
+          if (GoStopBtn.classList == "go_stop stop") {
+            GoStopBtn.classList.add("go");
+            GoStopBtn.classList.remove("stop");
+            document.querySelector(
+              ".main_sec .go_stop .go_icon"
+            ).style.display = "block";
+            document.querySelector(
+              ".main_sec .go_stop .stop_icon"
+            ).style.display = "none";
+          } else {
+            GoStopBtn.classList.remove("go");
+            GoStopBtn.classList.add("stop");
+            document.querySelector(
+              ".main_sec .go_stop .go_icon"
+            ).style.display = "none";
+            document.querySelector(
+              ".main_sec .go_stop .stop_icon"
+            ).style.display = "block";
+          }
+        });
+
+        $(".main_sec .go_stop .stop_icon").click(function () {
+          mainSlider.slick("slickPause");
+        });
+
+        $(".main_sec .go_stop .go_icon").click(function () {
+          mainSlider.slick("slickPlay");
+        });
+
+        $(".main_sec .arrow_box .right").click(function () {
+          mainSlider.slick("slickNext");
+        });
+
+        $(".main_sec .arrow_box .left").click(function () {
+          mainSlider.slick("slickPrev");
+        });
+      });
+
+      // 탭 메뉴 - js
+
+      const sec1Tab = document.querySelectorAll(".sec1 .tab_list button");
+      const sec1Card = document.querySelectorAll(".sec1 .card");
+
+      for (var i = 0; i < sec1Tab.length; i++) {
+        sec1Tab[i].addEventListener("click", function () {
+          for (var i = 0; i < sec1Tab.length; i++) {
+            sec1Tab[i].classList.remove("on");
+          }
+          this.classList.add("on");
+        });
+      }
+
+      sec1Tab[0].addEventListener("click", function () {
+        for (var i = 0; i < sec1Card.length; i++) {
+          sec1Card[i].classList.add("active");
+        }
+      });
+
+      sec1Tab[1].addEventListener("click", function () {
+        for (var i = 0; i < sec1Card.length; i++) {
+          if (sec1Card[i].classList.contains("ui")) {
+            sec1Card[i].classList.add("active");
+          } else {
+            sec1Card[i].classList.remove("active");
+          }
+        }
+      });
+
+      sec1Tab[2].addEventListener("click", function () {
+        for (var i = 0; i < sec1Card.length; i++) {
+          if (sec1Card[i].classList.contains("des")) {
+            sec1Card[i].classList.add("active");
+          } else {
+            sec1Card[i].classList.remove("active");
+          }
+        }
+      });
+
+      sec1Tab[3].addEventListener("click", function () {
+        for (var i = 0; i < sec1Card.length; i++) {
+          if (sec1Card[i].classList.contains("dev")) {
+            sec1Card[i].classList.add("active");
+          } else {
+            sec1Card[i].classList.remove("active");
+          }
+        }
       });
     </script>
   </body>

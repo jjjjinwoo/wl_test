@@ -1,4 +1,4 @@
-.floating_btn {
+#floating_btn {
   position: fixed;
   z-index: 100;
   width: 78px;
@@ -12,12 +12,75 @@
   align-items: center;
   justify-content: center;
   gap: 2px;
+  transition: 0.3s;
   filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.15));
 }
-.floating_btn .text {
+#floating_btn .text {
   color: white;
   font-weight: 700;
   margin-top: 2px;
+}
+
+#floating_btn:hover {
+  background-color: #cc0000;
+}
+
+#floating_btn.bottom {
+  bottom: -78px;
+}
+
+main > .popup {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  justify-content: center;
+  align-items: center;
+}
+main > .popup .text_box {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 70px 90px;
+  border-radius: 4px 4px 0 0;
+}
+main > .popup .text_box .text {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+main > .popup .text_box .close_btn {
+  width: 100%;
+  background-color: #ea0000;
+  height: 60px;
+  position: absolute;
+  bottom: -60px;
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+main > .popup .text_box .close_btn:hover {
+  background-color: #cc0000;
+}
+main > .popup .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+main > .popup.on {
+  display: flex;
 }
 
 .main_sec {
@@ -33,11 +96,14 @@
   align-items: center;
 }
 .main_sec .container .text_box {
+  width: 100%;
   position: relative;
   z-index: 1;
+}
+.main_sec .container .text_box .card {
   text-align: center;
   color: white;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: center;
 }
@@ -49,19 +115,23 @@
   border-radius: 28px;
   padding: 8px 28px;
   font-weight: 600;
-  margin-bottom: 38px;
+  margin-bottom: 30px;
 }
 .main_sec .container .text_box .title {
   font-size: 55px;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
   letter-spacing: -0.4px;
+  line-height: 1.4;
+  padding: 0 20px;
 }
 .main_sec .container .text_box .text {
   font-weight: 300;
   font-size: 18px;
   line-height: 28px;
+  padding: 0 20px;
+  max-width: 800px;
 }
 .main_sec .container .bg_box {
   position: absolute;
@@ -84,7 +154,13 @@
 }
 .main_sec .container .bg_box .bg_img.second {
   background-image: url(../img/sub/sub01/main_bg/2.png);
-  background-position-y: -486px;
+}
+.main_sec .container .bg_box .bg_img.third {
+  background-image: url(../img/sub/sub01/main_bg/3.png);
+}
+.main_sec .container .bg_box .bg_img.fourth {
+  background-image: url(../img/sub/sub01/main_bg/4.png);
+  background-position-y: -418px;
 }
 .main_sec .container .control_box {
   position: absolute;
@@ -104,7 +180,7 @@
 .main_sec .container .control_box .number .now {
   font-weight: 700;
 }
-.main_sec .container .control_box .number span:not(.now) {
+.main_sec .container .control_box .number .total {
   opacity: 0.8;
 }
 .main_sec .container .control_box .number .line {
@@ -117,12 +193,31 @@
   height: 36px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.main_sec .container .control_box .go_stop img {
+  padding: 15px;
+}
+.main_sec .container .control_box .go_stop .go_icon {
+  display: none;
+  position: relative;
+  left: 1px;
+}
+.main_sec .container .control_box .go_stop:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .main_sec .container .arrow_box {
   position: absolute;
-  width: 1200px;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .sec1 .container {
@@ -139,9 +234,11 @@
 }
 .sec1 .container .tab_list {
   display: flex;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
+  gap: 16px;
   margin-bottom: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 26px;
 }
 .sec1 .container .tab_list button {
   border: 1px solid black;
@@ -149,26 +246,35 @@
   font-weight: 500;
   padding: 8px 22px;
   border-radius: 30px;
+  background-color: white;
+  transition: 0.3s;
 }
 .sec1 .container .tab_list button.on {
   background-color: black;
   color: white;
 }
+.sec1 .container .tab_list button:not(.on):hover {
+  background-color: #eeeeee;
+}
 .sec1 .container .card_list {
   display: flex;
-  -moz-column-gap: 36px;
-       column-gap: 36px;
+  flex-wrap: wrap;
+  gap: 36px;
+  padding: 0 20px;
 }
 .sec1 .container .card_list .card {
-  display: flex;
   flex-direction: column;
   width: 273px;
+  display: none;
 }
 .sec1 .container .card_list .card .img_box {
   width: 273px;
   height: 273px;
   overflow: hidden;
   border-radius: 5px;
+}
+.sec1 .container .card_list .card .img_box img {
+  transition: 0.3s;
 }
 .sec1 .container .card_list .card .title {
   font-size: 22px;
@@ -180,6 +286,9 @@
   font-size: 16px;
   line-height: 22px;
   color: #999999;
+}
+.sec1 .container .card_list .card.active {
+  display: flex;
 }
 .sec1 .container .card_list .card.first img {
   position: relative;
@@ -201,6 +310,9 @@
   top: -32px;
   left: -96px;
 }
+.sec1 .container .card_list .card:hover .img_box img {
+  scale: 1.1;
+}
 .sec1 .container .more_btn {
   background-color: black;
   padding: 14px 42px;
@@ -213,10 +325,44 @@
   display: flex;
   align-items: center;
   margin-top: 60px;
+  transition: 0.3s;
+}
+.sec1 .container .more_btn:hover {
+  background-color: #ea0000;
 }
 
 @media screen and (min-width: 1920px) {
   .main_sec .bg_img {
     background-size: cover !important;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .sec1 .card_list {
+    width: 582px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main_sec .arrow_box {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 628px) {
+  .sec1 .card_list {
+    width: 274px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main_sec .text_box .title {
+    font-size: 42px !important;
+  }
+  .main_sec .text_box .text {
+    font-size: 16px !important;
+  }
+  #floating_btn {
+    right: calc(50% - 42px);
+  }
+  .sec1 .main_title {
+    font-size: 44px !important;
   }
 }/*# sourceMappingURL=sub01.css.map */
