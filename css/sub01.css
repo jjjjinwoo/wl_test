@@ -243,6 +243,7 @@ main > .popup.on {
   flex-wrap: wrap;
   justify-content: center;
   row-gap: 26px;
+  padding: 0 20px;
 }
 .sec1 .container .tab_list button {
   border: 1px solid black;
@@ -265,6 +266,7 @@ main > .popup.on {
   flex-wrap: wrap;
   gap: 36px;
   padding: 0 20px;
+  justify-content: center;
 }
 .sec1 .container .card_list .card {
   flex-direction: column;
