@@ -46,8 +46,12 @@ main > .popup .text_box {
   justify-content: center;
   align-items: center;
   background-color: white;
-  padding: 70px 90px;
+  padding: 70px 20px;
+  width: 400px;
   border-radius: 4px 4px 0 0;
+  margin: 0 20px;
+  text-align: center;
+  line-height: 1.4;
 }
 main > .popup .text_box .text {
   font-size: 22px;
@@ -357,12 +361,27 @@ main > .popup.on {
     font-size: 42px !important;
   }
   .main_sec .text_box .text {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
   #floating_btn {
     right: calc(50% - 42px);
   }
+  main > .popup .text_box .text {
+    font-size: 20px;
+  }
   .sec1 .main_title {
     font-size: 44px !important;
+  }
+  .sec1 .tab_list button {
+    font-size: 16px !important;
+  }
+  .sec1 .card .title {
+    font-size: 20px !important;
+  }
+  .sec1 .card .text {
+    font-size: 14px !important;
+  }
+  .sec1 .more_btn {
+    font-size: 16px !important;
   }
 }/*# sourceMappingURL=sub01.css.map */

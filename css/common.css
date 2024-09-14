@@ -20,17 +20,23 @@ button {
   cursor: pointer;
   padding: 0;
   letter-spacing: -0.01em;
+  color: black;
+}
+
+main {
+  padding-top: 84px;
 }
 
 /* 헤더 */
 header {
-  position: relative;
-  z-index: 100;
+  position: fixed;
+  z-index: 200;
   background-color: white;
   display: flex;
   justify-content: center;
   height: 84px;
   width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 header .header_wrap {
   width: 100%;
@@ -47,81 +53,6 @@ header .header_wrap .icon_box {
   position: relative;
   height: -moz-fit-content;
   height: fit-content;
-}
-header .header_wrap .icon_box #search_bar {
-  padding: 4px 22px;
-  padding-right: 10px;
-  background-color: #eeeeee;
-  border-radius: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 300px;
-  position: absolute;
-  left: -322px;
-  box-sizing: border-box;
-  transition: 0.3s;
-}
-header .header_wrap .icon_box #search_bar input {
-  background-color: transparent;
-  border: none;
-}
-header .header_wrap .icon_box #search_bar #search_text {
-  font-size: 16px;
-  font-weight: 500;
-  outline: none;
-}
-header .header_wrap .icon_box #search_bar #search_btn {
-  width: 30px;
-  height: 30px;
-  font-size: 0;
-  background-image: url(../img/main/icon/search.png);
-  cursor: pointer;
-}
-header .header_wrap .icon_box #search_bar .popup {
-  display: none;
-  width: 350px;
-  min-height: 50px;
-  border-radius: 6px;
-  position: absolute;
-  background-color: rgb(255, 255, 255);
-  top: 50px;
-  right: 0;
-  box-sizing: border-box;
-  padding: 20px;
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
-}
-header .header_wrap .icon_box #search_bar .popup h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-header .header_wrap .icon_box #search_bar .popup .list {
-  display: flex;
-  flex-wrap: wrap;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-}
-header .header_wrap .icon_box #search_bar .popup .list a {
-  font-size: 14px;
-  font-weight: 600;
-  color: #666666;
-  border: 1px solid #cccccc;
-  padding: 8px 18px;
-  border-radius: 30px;
-  display: block;
-  margin-bottom: 10px;
-  background-color: white;
-  transition: 0.3s;
-}
-header .header_wrap .icon_box #search_bar .popup .list a:hover {
-  background-color: #eeeeee;
-}
-header .header_wrap .icon_box #search_bar .popup.on {
-  display: block;
-}
-header .header_wrap .icon_box #search_bar:hover {
-  background-color: #e5e5e5;
 }
 header .header_wrap .icon_box .menu {
   position: relative;
@@ -140,6 +71,9 @@ header .header_wrap .icon_box .menu .bg {
   transition: 0.3s;
   top: -4px;
   left: -4px;
+}
+header .header_wrap .icon_box .menu.mobile {
+  display: none;
 }
 header .header_wrap .icon_box .menu:hover .bg {
   background-color: #eeeeee;
@@ -162,6 +96,146 @@ header .header_wrap > .list a {
 }
 header .header_wrap > .list a:hover {
   background-color: #eeeeee;
+}
+
+#search_bar {
+  padding: 4px 22px;
+  padding-right: 10px;
+  background-color: #eeeeee;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  position: absolute;
+  left: -322px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+#search_bar input {
+  background-color: transparent;
+  border: none;
+}
+#search_bar #search_text {
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+}
+#search_bar #search_btn {
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  background-image: url(../img/main/icon/search.png);
+  cursor: pointer;
+}
+#search_bar .popup {
+  display: none;
+  width: 350px;
+  min-height: 50px;
+  border-radius: 6px;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  top: 50px;
+  right: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+}
+#search_bar .popup h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+#search_bar .popup .list {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+#search_bar .popup .list a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666666;
+  border: 1px solid #cccccc;
+  padding: 8px 18px;
+  border-radius: 30px;
+  display: block;
+  margin-bottom: 10px;
+  background-color: white;
+  transition: 0.3s;
+}
+#search_bar .popup .list a:hover {
+  background-color: #eeeeee;
+}
+#search_bar .popup.on {
+  display: block;
+}
+
+#search_bar:hover {
+  background-color: #e5e5e5;
+}
+
+.mobile_menu {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  transform: translateX(100%);
+  z-index: 1;
+}
+.mobile_menu .container {
+  position: relative;
+  z-index: 300;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  float: right;
+  transform: translateX(100%);
+  transition: 0.5s;
+}
+.mobile_menu .container .top {
+  background-color: #424242;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.mobile_menu .container .search {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.mobile_menu .container .list .tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid #eeeeee;
+  padding: 22px 20px;
+  box-sizing: border-box;
+}
+.mobile_menu .black {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.mobile_menu.on {
+  transform: translateX(0%);
+}
+
+#search_bar.mobile {
+  position: relative;
+  left: 0;
+  width: 100%;
+  margin: 34px 0;
 }
 
 footer {
@@ -199,19 +273,31 @@ footer .container .sns_box a:hover {
 }
 
 @media screen and (max-width: 1500px) {
-  #search_bar {
+  #search_bar.web {
     display: none !important;
+  }
+  header .icon_box .menu.web {
+    display: none;
+  }
+  header .icon_box .menu.mobile {
+    display: block !important;
   }
 }
 @media screen and (max-width: 1024px) {
-  header .list {
+  header {
+    height: 76px !important;
+  }
+  header .header_wrap {
+    padding-top: 22px !important;
+  }
+  header .header_wrap .list {
     display: none !important;
+  }
+  main {
+    padding-top: 76px !important;
   }
 }
 @media screen and (max-width: 628px) {
-  header .list {
-    display: none !important;
-  }
   footer .container {
     flex-direction: column;
     gap: 30px;

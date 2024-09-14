@@ -20,18 +20,23 @@ button {
   cursor: pointer;
   padding: 0;
   letter-spacing: -0.01em;
+  color: black;
+}
+main {
+  padding-top: 84px;
 }
 
 /* 헤더 */
 
 header {
-  position: relative;
-  z-index: 100;
+  position: fixed;
+  z-index: 200;
   background-color: white;
   display: flex;
   justify-content: center;
   height: 84px;
   width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   .header_wrap {
     width: 100%;
     display: flex;
@@ -46,80 +51,6 @@ header {
       gap: 20px;
       position: relative;
       height: fit-content;
-      #search_bar {
-        padding: 4px 22px;
-        padding-right: 10px;
-        background-color: #eeeeee;
-        border-radius: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 300px;
-        position: absolute;
-        left: -322px;
-        box-sizing: border-box;
-        transition: 0.3s;
-        input {
-          background-color: transparent;
-          border: none;
-        }
-        #search_text {
-          font-size: 16px;
-          font-weight: 500;
-          outline: none;
-        }
-        #search_btn {
-          width: 30px;
-          height: 30px;
-          font-size: 0;
-          background-image: url(../img/main/icon/search.png);
-          cursor: pointer;
-        }
-        .popup {
-          display: none;
-          width: 350px;
-          min-height: 50px;
-          border-radius: 6px;
-          position: absolute;
-          background-color: rgb(255, 255, 255);
-          top: 50px;
-          right: 0;
-          box-sizing: border-box;
-          padding: 20px;
-          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
-          h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 20px;
-          }
-          .list {
-            display: flex;
-            flex-wrap: wrap;
-            column-gap: 10px;
-            a {
-              font-size: 14px;
-              font-weight: 600;
-              color: #666666;
-              border: 1px solid #cccccc;
-              padding: 8px 18px;
-              border-radius: 30px;
-              display: block;
-              margin-bottom: 10px;
-              background-color: white;
-              transition: 0.3s;
-            }
-            a:hover {
-              background-color: #eeeeee;
-            }
-          }
-        }
-        .popup.on {
-          display: block;
-        }
-      }
-      #search_bar:hover {
-        background-color: #e5e5e5;
-      }
       .menu {
         position: relative;
         img {
@@ -137,6 +68,9 @@ header {
           top: -4px;
           left: -4px;
         }
+      }
+      .menu.mobile {
+        display: none;
       }
       .menu:hover {
         .bg {
@@ -163,6 +97,145 @@ header {
       background-color: #eeeeee;
     }
   }
+}
+#search_bar {
+  padding: 4px 22px;
+  padding-right: 10px;
+  background-color: #eeeeee;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  position: absolute;
+  left: -322px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  input {
+    background-color: transparent;
+    border: none;
+  }
+  #search_text {
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+  }
+  #search_btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    background-image: url(../img/main/icon/search.png);
+    cursor: pointer;
+  }
+  .popup {
+    display: none;
+    width: 350px;
+    min-height: 50px;
+    border-radius: 6px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 50px;
+    right: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 10px;
+      a {
+        font-size: 14px;
+        font-weight: 600;
+        color: #666666;
+        border: 1px solid #cccccc;
+        padding: 8px 18px;
+        border-radius: 30px;
+        display: block;
+        margin-bottom: 10px;
+        background-color: white;
+        transition: 0.3s;
+      }
+      a:hover {
+        background-color: #eeeeee;
+      }
+    }
+  }
+  .popup.on {
+    display: block;
+  }
+}
+#search_bar:hover {
+  background-color: #e5e5e5;
+}
+
+// 모바일 메뉴
+
+.mobile_menu {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  transform: translateX(100%);
+  z-index: 1;
+  .container {
+    position: relative;
+    z-index: 300;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    float: right;
+    transform: translateX(100%);
+    transition: 0.5s;
+    .top {
+      background-color: #424242;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .search {
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .list {
+      .tab {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 500;
+        border-bottom: 1px solid #eeeeee;
+        padding: 22px 20px;
+        box-sizing: border-box;
+      }
+    }
+  }
+  .black {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: 0.5s;
+  }
+}
+.mobile_menu.on {
+  transform: translateX(0%);
+}
+#search_bar.mobile {
+  position: relative;
+  left: 0;
+  width: 100%;
+  margin: 34px 0;
 }
 
 // 푸터
@@ -201,25 +274,33 @@ footer {
 }
 
 @media screen and (max-width: 1500px) {
-  #search_bar {
+  #search_bar.web {
     display: none !important;
+  }
+  header .icon_box .menu.web {
+    display: none;
+  }
+  header .icon_box .menu.mobile {
+    display: block !important;
   }
 }
 
 @media screen and (max-width: 1024px) {
   header {
-    .list {
-      display: none !important;
+    height: 76px !important;
+    .header_wrap {
+      padding-top: 22px !important;
+      .list {
+        display: none !important;
+      }
     }
+  }
+  main {
+    padding-top: 76px !important;
   }
 }
 
 @media screen and (max-width: 628px) {
-  header {
-    .list {
-      display: none !important;
-    }
-  }
   footer {
     .container {
       flex-direction: column;

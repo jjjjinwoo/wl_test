@@ -29,7 +29,13 @@
             <li><a href="#">채용공고</a></li>
           </ul>
           <div class="icon_box">
-            <form action="#" method="post" name="search" id="search_bar">
+            <form
+              action="#"
+              method="post"
+              name="search"
+              id="search_bar"
+              class="web"
+            >
               <input
                 type="text"
                 id="search_text"
@@ -54,11 +60,91 @@
                 </ul>
               </div>
             </form>
-            <a class="menu" href="#">
+            <a class="menu web" href="#">
               <img src="./img/main/icon/gnb_menu.png" alt="gnb_menu" />
               <div class="bg"></div>
             </a>
+            <button class="menu mobile">
+              <img src="./img/main/icon/gnb_menu.png" alt="gnb_menu" />
+              <div class="bg"></div>
+            </button>
           </div>
+        </div>
+        <div class="mobile_menu">
+          <div class="container">
+            <div class="top">
+              <img src="./img/main/logo_w.png" alt="logo" />
+              <button class="close_btn">
+                <img src="./img/main/icon/close_w.png" alt="close" />
+              </button>
+            </div>
+            <div class="search">
+              <form
+                action="#"
+                method="post"
+                name="search"
+                id="search_bar"
+                class="mobile"
+              >
+                <input
+                  type="text"
+                  id="search_text"
+                  name="search_text"
+                  placeholder="키워드를 입력하세요."
+                  autocomplete="off"
+                />
+                <input
+                  type="submit"
+                  id="search_btn"
+                  name="search_btn"
+                  value="작성완료"
+                />
+                <div class="popup">
+                  <h3>추천 검색어</h3>
+                  <ul class="list">
+                    <li><a href="#">#디자인</a></li>
+                    <li><a href="#">#기획</a></li>
+                    <li><a href="#">#퍼블리셔</a></li>
+                    <li><a href="#">#코딩테스트</a></li>
+                    <li><a href="#">#백엔드개발자</a></li>
+                  </ul>
+                </div>
+              </form>
+            </div>
+            <ul class="list">
+              <li>
+                <a class="tab" href="#">
+                  <span>회사소개</span>
+                  <img src="./img/main/icon/arrow.png" alt="arrow" />
+                </a>
+              </li>
+              <li>
+                <a class="tab" href="#">
+                  <span>주요사업</span>
+                  <img src="./img/main/icon/arrow.png" alt="arrow" />
+                </a>
+              </li>
+              <li>
+                <a class="tab" href="#">
+                  <span>매거진</span>
+                  <img src="./img/main/icon/arrow.png" alt="arrow" />
+                </a>
+              </li>
+              <li>
+                <a class="tab" href="#">
+                  <span>공지사항</span>
+                  <img src="./img/main/icon/arrow.png" alt="arrow" />
+                </a>
+              </li>
+              <li>
+                <a class="tab" href="#">
+                  <span>채용공고</span>
+                  <img src="./img/main/icon/arrow.png" alt="arrow" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="black"></div>
         </div>
       </header>
       <main>
@@ -235,7 +321,7 @@
 
       // 검색팝업 - js
 
-      const searchText = document.querySelector("#search_text");
+      const searchText = document.querySelector("#search_bar.web #search_text");
       const searchPopup = document.querySelector("#search_bar .popup");
 
       searchText.addEventListener("focus", function () {
@@ -278,6 +364,30 @@
         }
       });
 
+      //모바일 메뉴
+
+      const menuBtnMobile = document.querySelector(
+        "header .icon_box .menu.mobile"
+      );
+      const closeBtnMobile = document.querySelector(".mobile_menu .close_btn");
+      const mobileMenu = document.querySelector(".mobile_menu");
+
+      menuBtnMobile.addEventListener("click", function () {
+        document.querySelector(".mobile_menu .container").style.transform =
+          "translateX(0%)";
+        document.querySelector(".mobile_menu .black").style.opacity = 1;
+        mobileMenu.classList.add("on");
+      });
+
+      closeBtnMobile.addEventListener("click", function () {
+        document.querySelector(".mobile_menu .container").style.transform =
+          "translateX(100%)";
+        document.querySelector(".mobile_menu .black").style.opacity = 0;
+        setTimeout(() => {
+          mobileMenu.classList.remove("on");
+        }, 500);
+      });
+
       // 슬릭슬라이더 - jquery, js
 
       const mainSlider = $(".main_sec .bg_box");
@@ -288,7 +398,7 @@
           autoplay: true,
           arrows: false,
           asNavFor: mainSliderText,
-          speed: 3000,
+          speed: 1500,
           pauseOnFocus: false,
           pauseOnHover: false,
         });
@@ -312,7 +422,9 @@
           fade: true,
           arrows: false,
           asNavFor: mainSlider,
-          speed: 3000,
+          speed: 1500,
+          pauseOnFocus: false,
+          pauseOnHover: false,
         });
 
         const GoStopBtn = document.querySelector(".main_sec .go_stop");
